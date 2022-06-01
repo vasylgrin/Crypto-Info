@@ -1,0 +1,8 @@
+﻿<Application x:Class="MyCryptoApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MyCryptoApp" xmlns:viewmodels="clr-namespace:MyCryptoApp.ViewModels"
+             StartupUri="Views/Windows/MainWindow.xaml">
+    <Application.Resources>
+    </Application.Resources>
+</Application>

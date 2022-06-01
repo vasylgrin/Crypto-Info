@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "tBhyUvnna/2XBrAsUUIyPky2Ua7PUb/fqCuSJ/aSl3yBDfmiKCMa83wXx3j7+5pkWQ8IRlcemRv2V4EFzAK4xA==",
+  "success": true,
+  "projectFilePath": "D:\\myProject\\MyCryptoApp\\MyCryptoApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vasyl\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\vasyl\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\vasyl\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
