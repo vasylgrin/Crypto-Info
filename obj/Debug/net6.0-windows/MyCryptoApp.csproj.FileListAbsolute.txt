@@ -19,7 +19,13 @@ D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\MyCryptoApp.genruntimeconfig.c
 D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\ref\MyCryptoApp.dll
 D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\Views\Windows\MainWindow.g.cs
 D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\Views\Windows\MainWindow.baml
-D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\myProject\MyCryptoApp\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
 D:\myProject\MyCryptoApp\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\MyCryptoApp.csproj.CopyComplete
+D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\Views\Pages\DetailInformation.g.cs
+D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\Views\Pages\Home.g.cs
+D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\Views\Pages\Options.g.cs
+D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\Views\Pages\DetailInformation.baml
+D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\Views\Pages\Home.baml
+D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\Views\Pages\Options.baml

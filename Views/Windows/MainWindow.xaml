@@ -3,32 +3,66 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MyCryptoApp" xmlns:viewmodels="clr-namespace:MyCryptoApp.ViewModels"
+        xmlns:local="clr-namespace:MyCryptoApp" 
+        xmlns:viewmodels="clr-namespace:MyCryptoApp.ViewModels"
+        xmlns:pages="clr-namespace:MyCryptoApp.Pages"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-
+        Title="MainWindow" 
+        Height="450" 
+        Width="800">
     <Window.DataContext>
         <viewmodels:MainViewModel/>
     </Window.DataContext>
 
-    <Grid>
+    <Grid Background="#FFCCCCCC">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="152*"/>
+            <ColumnDefinition Width="469*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="89*"/>
-            <RowDefinition Height="279*"/>
-            <RowDefinition Height="66*"/>
+            <RowDefinition Height="81*"/>
+            <RowDefinition Height="353*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Height="69" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" Text="Топ 10 токенів" FontSize="36" Margin="0,10,0,0"/>
-        <TextBlock Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" Text="{Binding GetTopToken}" FontSize="18" Margin="10,0,0,0" HorizontalAlignment="Left" Width="246" Height="259" VerticalAlignment="Center"/>
-        <TextBox x:Name="SearchTextBox" Grid.Column="2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="181" Height="34" Margin="10,0,0,0" Text="{Binding TextToSend}"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Height="259" Width="247" FontSize="30" Text="{Binding GetSearchToken}"/>
-        <Button Content="Options" HorizontalAlignment="Center" Height="22" Margin="0,34,0,0" Grid.Row="2" VerticalAlignment="Top" Width="247"/>
-        <Label Content="My Crypto App" HorizontalAlignment="Center" Height="69" VerticalAlignment="Center" Width="247" FontSize="24"/>
-        <Button Content="2page" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="247"/>
-        <Button Grid.Column="2" Content="Search" HorizontalAlignment="Left" Margin="196,0,0,0" VerticalAlignment="Center" Height="34" Width="61" Command="{Binding SearchCommand}"/>
+
+        <Frame Grid.Column="1" 
+               Content="{Binding CurrentPage}" 
+               Grid.RowSpan="2" 
+               NavigationUIVisibility="Hidden" Width="{Binding CurrentPage}"/>
+
+        <Button Content="DetailPage" HorizontalAlignment="Center" 
+                Margin="0,35,0,0" 
+                Grid.Row="1" 
+                VerticalAlignment="Top" 
+                Width="176" 
+                Command="{Binding DetailPageButton}"/>
+
+        <Button Content="Button" 
+                HorizontalAlignment="Center" 
+                Margin="0,288,0,0" 
+                Grid.Row="1" 
+                VerticalAlignment="Top" 
+                Width="176"
+                Command="{Binding OptionsButton}"/>
+
+        <Label Content="My Crypto App"               
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center" 
+               Height="81" 
+               Width="176"
+               FontSize="24" 
+               VerticalContentAlignment="Center" 
+               HorizontalContentAlignment="Center" 
+               FontFamily="Times New Roman"/>
+        <Button Content="Home" 
+                HorizontalAlignment="Center" 
+                Margin="0,10,0,0" 
+                Grid.Row="1" 
+                VerticalAlignment="Top" 
+                Width="176"
+                Command="{Binding HomePageButton}" 
+                Background="#FFB3F952" 
+                BorderBrush="White"
+                />
+
     </Grid>
 </Window>

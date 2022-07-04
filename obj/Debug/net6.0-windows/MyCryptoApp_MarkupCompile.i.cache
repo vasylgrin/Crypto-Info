@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\myProject\MyCryptoApp\App.xaml
-1-834700163
+4286683078
 
-7-70372655
+17-992843720
 1961735862057
-Views\Windows\MainWindow.xaml;
+Views\Pages\DetailInformation.xaml;Views\Pages\Home.xaml;Views\Pages\Options.xaml;Views\Windows\MainWindow.xaml;
 
 True
 

@@ -16,8 +16,6 @@ namespace MyCryptoApp
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            //ViewModelLocator.Init();
-
             base.OnStartup(e);
         }
     }
