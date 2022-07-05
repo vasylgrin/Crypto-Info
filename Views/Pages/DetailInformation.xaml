@@ -14,8 +14,8 @@
 
     <Grid Background="#FF9A9A9A">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="97*"/>
-            <ColumnDefinition Width="54*"/>
+            <ColumnDefinition Width="563*"/>
+            <ColumnDefinition Width="41*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="64*"/>
@@ -23,7 +23,7 @@
             <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
         <TextBox HorizontalAlignment="Left" 
-                 Margin="10,10,10,10" 
+                 Margin="10,0,0,0" 
                  TextWrapping="Wrap" 
                  VerticalAlignment="Center" 
                  Width="251" 
@@ -31,19 +31,21 @@
                  Text="{Binding TextToSend}"/>
         <Button Content="Button" 
                 HorizontalAlignment="Left" 
-                Margin="266,10,10,10" 
+                Margin="266,0,0,0" 
                 VerticalAlignment="Center" 
                 Height="44"
                 Width="112"
                 Command="{Binding SearchCommand}"/>
         <ListBox Grid.Row="1" 
                  Margin="10,105,10,10"
-                 ItemsSource="{Binding Tokens}" 
+                 ItemsSource="{Binding Markets}" 
                  d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
+                    <Grid Height="40" Width="509">
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
@@ -51,19 +53,25 @@
                         </Grid.ColumnDefinitions>
                         
                         <TextBlock Margin="5,5,5,5"
-                                   Text="{Binding Number}"/>
+                                   Text="{Binding Name}"/>
 
                         <TextBlock Margin="5,5,5,5" 
                                    Grid.Column="1"
-                                   Text="{Binding FullName}"/>
+                                   Text="{Binding TokenName}"/>
 
                         <TextBlock Margin="5,5,5,5" 
                                    Grid.Column="2" 
-                                   Text="{Binding Symbol}"/>
+                                   Text="{Binding TokenSymbol}"/>
 
                         <TextBlock Margin="5,5,5,5" 
                                    Grid.Column="3" 
-                                   Text="{Binding Price}"/>
+                                   Text="{Binding QuoteId}"/>
+                        <TextBlock Margin="5,5,5,5" 
+                                   Grid.Column="4" 
+                                   Text="{Binding QuoteSymbol}"/>
+                        <TextBlock Margin="5,5,5,5" 
+                                   Grid.Column="5" 
+                                   Text="{Binding PriceUsd}"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -73,6 +81,6 @@
                    TextWrapping="Wrap" 
                    VerticalAlignment="Top" 
                    Height="90"
-                   Text="{Binding GetSearchToken}"/>
+                   Text="{Binding GetSearchToken}" FontSize="20"/>
     </Grid>
 </UserControl>

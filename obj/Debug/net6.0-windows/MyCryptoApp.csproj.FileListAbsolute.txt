@@ -29,3 +29,4 @@ D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\Views\Pages\Options.g.cs
 D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\Views\Pages\DetailInformation.baml
 D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\Views\Pages\Home.baml
 D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\Views\Pages\Options.baml
+D:\myProject\MyCryptoApp\bin\Debug\net6.0-windows\Newtonsoft.Json.dll

@@ -1,5 +1,4 @@
-﻿using MVVM;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
 namespace MyCryptoApp.ViewModels
 {
@@ -10,7 +9,5 @@ namespace MyCryptoApp.ViewModels
         {
             CurrentPage = new Pages.Home();
         }    
-
-
     }
 }

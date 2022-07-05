@@ -1,5 +1,4 @@
-﻿using MVVM;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace MyCryptoApp.ViewModels
@@ -9,6 +8,7 @@ namespace MyCryptoApp.ViewModels
         private object _currentPage;
 
         public object CurrentPage { get => _currentPage; set { _currentPage = value; OnPropertyChanged(); } }
+
         public Navigation()
         {
 
@@ -23,7 +23,7 @@ namespace MyCryptoApp.ViewModels
         {
             get
             {
-                return new RelayCommand((obj) => CurrentPage = new Pages.Home());
+                return new DelegateCommand((obj) => CurrentPage = new Pages.Home());
             }
         }
 
@@ -32,7 +32,7 @@ namespace MyCryptoApp.ViewModels
         {
             get
             {
-                return new RelayCommand((obj) => CurrentPage = new Pages.DetailInformation());
+                return new DelegateCommand((obj) => CurrentPage = new Pages.DetailInformation());
             }
         }
 
@@ -41,7 +41,7 @@ namespace MyCryptoApp.ViewModels
         {
             get
             {
-                return new RelayCommand((obj) => CurrentPage = new Pages.Options());
+                return new DelegateCommand((obj) => CurrentPage = new Pages.Options());
             }
         }
     }

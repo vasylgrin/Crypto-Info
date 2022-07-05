@@ -27,7 +27,14 @@ namespace MyCryptoApp.Models
         /// Currency price.
         /// </summary>
         public double Price { get; set; }
-
+        
+        /// <summary>
+        /// Create token.
+        /// </summary>
+        /// <param name="number">Sequence number token.</param>
+        /// <param name="fullName">Fullname token.</param>
+        /// <param name="symbol">Abreviated token.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public Token(int number, string fullName, string symbol)
         {
             if(number < 0)
@@ -42,6 +49,14 @@ namespace MyCryptoApp.Models
 
         }
 
+        /// <summary>
+        /// Create token.
+        /// </summary>
+        /// <param name="number">Sequence number token.</param>
+        /// <param name="fullName">Fullname token.</param>
+        /// <param name="symbol">Abreviated token.</param>
+        /// <param name="price">Price token.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public Token(int number, string fullName, string symbol, double price) : this(number, fullName, symbol)
         {
             if (price < 0)
