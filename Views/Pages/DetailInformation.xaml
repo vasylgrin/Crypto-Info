@@ -4,83 +4,140 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MyCryptoApp.Pages" xmlns:viewmodels="clr-namespace:MyCryptoApp.ViewModels"
-             mc:Ignorable="d" 
-      Width="604.186795491143" 
-      Height="434.04">
+      mc:Ignorable="d" 
+      Width="800" 
+      Height="450"
+      Background="Transparent">
 
     <UserControl.DataContext>
         <viewmodels:DetailInformationPageViewModel/>
     </UserControl.DataContext>
 
-    <Grid Background="#FF9A9A9A">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="563*"/>
-            <ColumnDefinition Width="41*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="64*"/>
-            <RowDefinition Height="325*"/>
-            <RowDefinition Height="45*"/>
-        </Grid.RowDefinitions>
-        <TextBox HorizontalAlignment="Left" 
-                 Margin="10,0,0,0" 
-                 TextWrapping="Wrap" 
-                 VerticalAlignment="Center" 
-                 Width="251" 
-                 Height="44" 
-                 Text="{Binding TextToSend}"/>
-        <Button Content="Button" 
-                HorizontalAlignment="Left" 
-                Margin="266,0,0,0" 
-                VerticalAlignment="Center" 
-                Height="44"
-                Width="112"
-                Command="{Binding SearchCommand}"/>
-        <ListBox Grid.Row="1" 
-                 Margin="10,105,10,10"
+    <StackPanel>
+        <TextBlock Text="Detail Information"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,20"
+                   Style="{StaticResource TextblockDark}"/>
+        <StackPanel>
+            <TextBlock Text="Enter abreviated(btc,eth and etc)"
+                       FontSize="20"
+                       HorizontalAlignment="Left"
+                       Margin="0,0,0,20"
+                       Style="{StaticResource TextblockDark}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Border Width="200"
+                    Height="35"
+                    Background="Azure">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,200,35"/>
+                </Border.Clip>
+                <Grid>
+                    <TextBox BorderThickness="0"
+                             Background="Transparent"
+                             Text="{Binding TextToSend}">
+                    </TextBox>
+                </Grid>
+            </Border>
+            <Border Width="100"
+                    Height="35"
+                    Margin="10,0,0,0">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,100,35"/>
+                </Border.Clip>
+                <Button BorderThickness="0"
+                        Background="Azure"
+                        Command="{Binding SearchCommand}">
+                    <TextBlock Text="Search"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Button>
+            </Border>
+        </StackPanel>
+        <StackPanel Height="10"/>
+        <StackPanel Height="20"
+                    Orientation="Horizontal"
+                    >
+            <Border Width="250"
+                    Height="20"
+                    VerticalAlignment="Top">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,250,20"/>
+                </Border.Clip>
+                <Grid>
+                    <TextBlock Background="Azure"
+                               Text="{Binding GetSearchToken}"
+                               VerticalAlignment="Stretch" Uid=""
+                               />
+                </Grid>
+            </Border>
+                    
+
+        </StackPanel>
+        <StackPanel Height="40"/>
+        <StackPanel Orientation="Horizontal"
+                    Height="229">
+            <Border Width="700"
+                    Height="229"
+                    Background="Azure">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,700,229"/>
+                </Border.Clip>
+
+                <ListBox Grid.Row="1" 
                  ItemsSource="{Binding Markets}" 
-                 d:ItemsSource="{d:SampleData ItemCount=5}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Height="40" Width="509">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        
-                        <TextBlock Margin="5,5,5,5"
+                 ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                 ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                 Background="Transparent"
+                 BorderThickness="0">
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Height="40" Width="509">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Margin="5,5,5,5"
                                    Text="{Binding Name}"/>
 
-                        <TextBlock Margin="5,5,5,5" 
+                                <TextBlock Margin="5,5,5,5" 
                                    Grid.Column="1"
                                    Text="{Binding TokenName}"/>
 
-                        <TextBlock Margin="5,5,5,5" 
+                                <TextBlock Margin="5,5,5,5" 
                                    Grid.Column="2" 
                                    Text="{Binding TokenSymbol}"/>
 
-                        <TextBlock Margin="5,5,5,5" 
+                                <TextBlock Margin="5,5,5,5" 
                                    Grid.Column="3" 
                                    Text="{Binding QuoteId}"/>
-                        <TextBlock Margin="5,5,5,5" 
+                                <TextBlock Margin="5,5,5,5" 
                                    Grid.Column="4" 
                                    Text="{Binding QuoteSymbol}"/>
-                        <TextBlock Margin="5,5,5,5" 
+                                <TextBlock Margin="5,5,5,5" 
                                    Grid.Column="5" 
                                    Text="{Binding PriceUsd}"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <TextBlock Margin="10,10,10,0" 
-                   Grid.Row="1" 
-                   TextWrapping="Wrap" 
-                   VerticalAlignment="Top" 
-                   Height="90"
-                   Text="{Binding GetSearchToken}" FontSize="20"/>
-    </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Border>
+        </StackPanel>
+    </StackPanel>
 </UserControl>

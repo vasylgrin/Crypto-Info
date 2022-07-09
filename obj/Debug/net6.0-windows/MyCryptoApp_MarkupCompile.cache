@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\myProject\MyCryptoApp\obj\Debug\net6.0-windows\
+D:\myProject\Crypto-Info\obj\Debug\net6.0-windows\
 MyCryptoApp
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\myProject\MyCryptoApp\App.xaml
-4286683078
+D:\myProject\Crypto-Info\App.xaml
+8-898180414
 
-14644838888
-197661640134
-Views\Pages\DetailInformation.xaml;Views\Pages\Home.xaml;Views\Pages\Options.xaml;Views\Windows\MainWindow.xaml;
+181374825787
+19568241727
+Themes\Dark.xaml;Themes\Light.xaml;Themes\MenuButtonTheme.xaml;Views\Pages\Convert.xaml;Views\Pages\DetailInformation.xaml;Views\Pages\Home.xaml;Views\Pages\Options.xaml;Views\Windows\MainWindow.xaml;
 
 False
 

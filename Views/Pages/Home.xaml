@@ -7,61 +7,66 @@
       xmlns:viewmodels="clr-namespace:MyCryptoApp.ViewModels" 
       d:DataContext="{d:DesignInstance Type=viewmodels:HomePageViewModels}"
       mc:Ignorable="d" 
-      Width="604.186795491143" 
-      Height="434.04">
+      Width="800" 
+      Height="450">
 
-    <Grid Background="#FF9A9A9A" Margin="0,0,0,10">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="12*"/>
-            <ColumnDefinition Width="167*"/>
-            <ColumnDefinition Width="123*"/>
+    <StackPanel>
+        <TextBlock Text="Home"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,20"
+                   Style="{StaticResource TextblockDark}"/>
+        <StackPanel>
+            <TextBlock Text="Top 10 tokens"
+                       FontSize="20"
+                       HorizontalAlignment="Left"
+                       Margin="5"
+                       Style="{StaticResource TextblockDark}"/>
+        </StackPanel>
 
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="313*"/>
-            <RowDefinition Height="31*"/>
-        </Grid.RowDefinitions>
-        <TextBlock 
-                   TextWrapping="Wrap" 
-                   Text="Топ 10 токенів" 
-                   FontSize="20" Margin="10,10,10,10" 
-                   Grid.Column="1"/>
+        <StackPanel Orientation="Horizontal">
+            <Border Width="350"
+                    Height="310"
+                    Background="Azure">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,350,310"/>
+                </Border.Clip>
+                <Grid>
+                    <ListBox Background="Transparent"
+                             BorderBrush="Transparent"
+                             ItemsSource="{Binding Tokens}"
+                             ScrollViewer.VerticalScrollBarVisibility="Hidden" d:ItemsSource="{d:SampleData ItemCount=5}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Width="319">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="84*"/>
+                                        <ColumnDefinition Width="159*"/>
+                                        <ColumnDefinition Width="76*"/>
+                                    </Grid.ColumnDefinitions>
 
-        <ListBox ItemsSource="{Binding Tokens}" 
-                 SelectedItem="{Binding SelectToken}" 
-                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
-                 Grid.Column="1" 
-                 Grid.Row="1" 
-                 Margin="10,10,10,10">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Height="24" Width="265">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="53*"/>
-                            <ColumnDefinition Width="99*"/>
-                            <ColumnDefinition Width="133*"/>
-                        </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding Number}"
+                                               Margin="5,5,5,5"
+                                               Foreground="#292929"/>
 
-                        <TextBlock Margin="5,5,5,5" 
-                                   Text="{Binding Number}"/>
+                                    <TextBlock Text="{Binding FullName}"
+                                               Margin="5,5,5,5"
+                                               Grid.Column="1"
+                                               Foreground="#292929"/>
 
-                        <TextBlock Margin="5,5,5,5" 
-                                   Grid.Column="1" 
-                                   Text="{Binding FullName}"/>
+                                    <TextBlock Text="{Binding Symbol}"
+                                               Margin="5,5,5,5"
+                                               Grid.Column="2"
+                                               Foreground="#292929"/>
 
-                        <TextBlock Margin="5,5,5,5" 
-                                   Grid.Column="2" 
-                                   Text="{Binding Symbol}"/>
-
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-            <!--<ListBox.ItemContainerStyle>
-                <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
-                    <EventSetter Event="MouseDoubleClick" Handler="ListBoxItem_MouseDoubleClick"/>
-                </Style>
-            </ListBox.ItemContainerStyle>-->
-        </ListBox>
-    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </StackPanel>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using MyCryptoApp.Views.Pages;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace MyCryptoApp.ViewModels
@@ -42,6 +43,14 @@ namespace MyCryptoApp.ViewModels
             get
             {
                 return new DelegateCommand((obj) => CurrentPage = new Pages.Options());
+            }
+        }
+
+        public ICommand ConvertButton
+        {
+            get
+            {
+                return new DelegateCommand((obj) => CurrentPage = new Convert());
             }
         }
     }

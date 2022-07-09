@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\myProject\\MyCryptoApp\\MyCryptoApp.csproj": {}
+    "D:\\myProject\\Crypto-Info\\MyCryptoApp.csproj": {}
   },
   "projects": {
-    "D:\\myProject\\MyCryptoApp\\MyCryptoApp.csproj": {
+    "D:\\myProject\\Crypto-Info\\MyCryptoApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\myProject\\MyCryptoApp\\MyCryptoApp.csproj",
+        "projectUniqueName": "D:\\myProject\\Crypto-Info\\MyCryptoApp.csproj",
         "projectName": "MyCryptoApp",
-        "projectPath": "D:\\myProject\\MyCryptoApp\\MyCryptoApp.csproj",
+        "projectPath": "D:\\myProject\\Crypto-Info\\MyCryptoApp.csproj",
         "packagesPath": "C:\\Users\\vasyl\\.nuget\\packages\\",
-        "outputPath": "D:\\myProject\\MyCryptoApp\\obj\\",
+        "outputPath": "D:\\myProject\\Crypto-Info\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Visual Studio All\\Нова папка (3)\\NuGetPackages"
@@ -44,10 +44,6 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
-            "Microsoft.Extensions.DependencyInjection": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"

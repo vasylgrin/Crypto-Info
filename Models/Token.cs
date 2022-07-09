@@ -66,7 +66,7 @@ namespace MyCryptoApp.Models
 
         public override string ToString()
         {
-            return $"{Number} {FullName} {Symbol} {Price}";
+            return $"{Number}\t{FullName}\t{Symbol}\t{Math.Round(Price,4)}$";
         }
     }
 }

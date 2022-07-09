@@ -18,7 +18,7 @@ namespace MyCryptoApp.Pages
     /// <summary>
     /// Логика взаимодействия для Options.xaml
     /// </summary>
-    public partial class Options : Page
+    public partial class Options
     {
         public Options()
         {
