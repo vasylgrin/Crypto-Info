@@ -11,36 +11,54 @@
     <UserControl.DataContext>
         <viewmodels:OptionsViewModels/>
     </UserControl.DataContext>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Button Content="Dark" 
-                Margin="10,46,206,139"
-                Command="{Binding Gray}"/>
 
-        <Button Content="Light" 
-                Margin="10,93,207,93"
-                Command="{Binding Light}"/>
-        <Label Content="Themes" 
-               Margin="10,10,10,176"/>
-        <Label Grid.Column="1" 
-               Content="Localization" 
-               Margin="10,10,10,181"/>
-        <Button Grid.Column="1" 
-                Content="Button" 
-                HorizontalAlignment="Left" 
-                Margin="10,48,0,0" 
-                VerticalAlignment="Top"/>
-        <Button Grid.Column="1" 
-                Content="Button" 
-                HorizontalAlignment="Left" 
-                Margin="10,73,0,0" 
-                VerticalAlignment="Top"/>
-    </Grid>
+    <StackPanel>
+        <TextBlock Text="Options"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,20"
+                   Style="{StaticResource Textblock}"/>
+        <StackPanel>
+            <TextBlock Text="Theme"
+                       FontSize="20"
+                       HorizontalAlignment="Left"
+                       Margin="0,0,0,20"
+                       Style="{StaticResource Textblock}"/>
+        </StackPanel>
+        <StackPanel Height="40"
+                    Orientation="Horizontal">
+            <Border Background="Azure"
+                    Width="100">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,100,40"/>
+                </Border.Clip>
+
+                <Button Background="Transparent"
+                        BorderThickness="0"
+                        Command="{Binding Light}">
+                    <TextBlock Text="Light"
+                               FontSize="16"/>
+                </Button>
+            </Border>
+
+            <Border Background="Azure"
+                    Width="100"
+                    Margin="10,0,0,0">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,100,40"/>
+                </Border.Clip>
+
+                <Button Background="Transparent"
+                        BorderThickness="0"
+                        Command="{Binding Dark}">
+                    <TextBlock Text="Dark"
+                               FontSize="16"/>
+                </Button>
+            </Border>
+        </StackPanel>
+    </StackPanel>
 </UserControl>

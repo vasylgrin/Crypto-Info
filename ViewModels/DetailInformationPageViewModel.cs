@@ -15,27 +15,34 @@ namespace MyCryptoApp.ViewModels
 {
     internal class DetailInformationPageViewModel : BaseVM
     {
-        private string _TextToSend;
-        private string _GetSearchToken;
+        #region Property
+        private string? _TextToSend;
+        private string? _GetSearchToken;
         private ObservableCollection<Token> _Tokens = new();
         private ObservableCollection<Market> _Market = new();
-        string responses, currentToken = "";
-        JToken data;
-        ObservableCollection<Market> marketList = new();
+        string currentToken = "";
+        JToken? data;
+        readonly ObservableCollection<Market> marketList = new();
 
-        public string TextToSend { get => _TextToSend; set { _TextToSend = value; OnPropertyChanged("TextToSend"); } }
-        public string GetSearchToken { get => _GetSearchToken; set { _GetSearchToken = value; OnPropertyChanged(); } }
+        public string? TextToSend { get => _TextToSend; set { _TextToSend = value; OnPropertyChanged("TextToSend"); } }
+        public string? GetSearchToken { get => _GetSearchToken; set { _GetSearchToken = value; OnPropertyChanged(); } }
         public ObservableCollection<Token> Tokens { get => _Tokens; set { _Tokens = value; OnPropertyChanged(); } }
         public ObservableCollection<Market> Markets { get => _Market; set { _Market = value; OnPropertyChanged(); } }
-        public string Response { get; set; }
+
+        readonly BaseVM baseVM = new();
+        #endregion
 
         /// <summary>
         /// Button for search token.
         /// </summary>
-        public DelegateCommand SearchCommand => new DelegateCommand((obj) =>
+        public DelegateCommand SearchCommand => new((obj) =>
         {
             if (string.IsNullOrWhiteSpace(_TextToSend))
+            {
+                Markets.Clear();
+                GetSearchToken = "Input string empty";
                 return;
+            }
             
             GetToken();
             GetMarkets();
@@ -44,29 +51,48 @@ namespace MyCryptoApp.ViewModels
 
         void GetToken()
         {
-            GetRequest("https://api.coincap.io/v2/assets");
+            GetSearchToken = "";
+            baseVM.GetRequest("https://api.coincap.io/v2/assets",out data);
 
             foreach (var item in data)
             {
                 Token token = new(Convert.ToInt32(item["rank"]), item["id"].ToString(), item["symbol"].ToString(), Convert.ToDouble(item["priceUsd"]));
                 Tokens.Add(token);
             }
-
+            string variable = "";
             foreach (var tokens in Tokens)
             {
                 if (tokens.Symbol.Contains(TextToSend.ToUpper()))
                 {
-                    GetSearchToken = tokens.ToString();
+                    variable = tokens.ToString();
                     currentToken = tokens.FullName.ToLower();
                     break;
                 }
+                if (tokens.FullName.ToUpper().Contains(TextToSend.ToUpper()))
+                {
+                    variable = tokens.ToString();
+                    currentToken = tokens.FullName.ToLower();
+                    break;
+                }
+            }
+            if (!string.IsNullOrWhiteSpace(variable))
+            {
+                GetSearchToken = variable;
+            }
+            else
+            {
+                GetSearchToken = $"Token {TextToSend} not found";
             }
         }
 
         void GetMarkets()
         {
             Markets.Clear();
-            GetRequest($"https://api.coincap.io/v2/assets/{currentToken}/markets");
+            
+            if (string.IsNullOrWhiteSpace(currentToken))
+                return;
+            
+            baseVM.GetRequest($"https://api.coincap.io/v2/assets/{currentToken}/markets",out data);
 
             foreach (var item in data)
             {
@@ -86,30 +112,11 @@ namespace MyCryptoApp.ViewModels
                 {
                     Markets.Add(item);
                 }
+                if (item.TokenName.ToUpper().Contains(TextToSend.ToUpper()))
+                {
+                    Markets.Add(item);
+                }
             }
-        }
-
-
-        void GetRequest(string adress)
-        {
-            HttpWebRequest _request;
-            _request = WebRequest.Create(adress) as HttpWebRequest;
-            _request.Method = "GET";
-
-            try
-            {
-                HttpWebResponse response = _request.GetResponse() as HttpWebResponse;
-                var stream = response.GetResponseStream();
-                if (stream != null) Response = new StreamReader(stream).ReadToEnd();
-            }
-            catch (Exception)
-            {
-            }
-
-            var responses = Response;
-            var nameJson = JObject.Parse(responses);
-            data = nameJson["data"];
-        }
-
+        }  
     }
 }

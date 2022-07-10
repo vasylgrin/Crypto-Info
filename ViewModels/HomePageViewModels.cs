@@ -1,35 +1,21 @@
 ﻿using MyCryptoApp.Models;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace MyCryptoApp.ViewModels
 {
-    internal class HomePageViewModels : Navigation
+    internal class HomePageViewModels : BaseVM
     {
         private string _GetTopToken;
         private ObservableCollection<Token> _Tokens = new();
-        private Token _selectToken;
-
 
         public string GetTopToken { get => _GetTopToken; set { _GetTopToken = value; OnPropertyChanged(); } }
         public ObservableCollection<Token> Tokens { get => _Tokens; set { _Tokens = value; OnPropertyChanged(); } }
-        public Token SelectToken 
-        { 
-            get => _selectToken; 
-            set 
-            {
-                new Navigation(new Pages.Home());
-                OnPropertyChanged(); 
-            } 
-        }
 
-        
+
+
 
         /// <summary>
         /// Displaying top 10 currencies tokens.
@@ -53,13 +39,13 @@ namespace MyCryptoApp.ViewModels
                     {
                         Match match = Regex.Match(line, $"\"rank\":\"{i}\",(.*?)\"symbol\":\"(.*?)\",(.*?)\"name\":\"(.*?)\",");
 
-                        Token token = new Token(i, match.Groups[4].Value, match.Groups[2].Value);
-                        
+                        Token token = new(i, match.Groups[4].Value, match.Groups[2].Value);
+
                         App.Current.Dispatcher.Invoke(() =>
                         {
                             Tokens.Add(token);
                         });
-                        
+
                         i++;
                     }
 
@@ -69,7 +55,7 @@ namespace MyCryptoApp.ViewModels
                         Tokens?.Clear();
                     });
                 }
-            });           
-        }  
+            });
+        }
     }
 }

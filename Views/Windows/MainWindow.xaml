@@ -9,12 +9,14 @@
         Height="500" 
         Width="900"
         ResizeMode="NoResize"
-        Background="Transparent" WindowStyle="SingleBorderWindow">
+        Background="Transparent" 
+        WindowStyle="ToolWindow">
+    
     <Window.DataContext>
         <viewmodels:MainViewModel/>
     </Window.DataContext>
 
-    <Border CornerRadius="10"
+    <Border
             Style="{StaticResource Border}">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -40,25 +42,30 @@
 
                 <RadioButton Content="Home"
                              Height="50"
-                             Style="{StaticResource RadioButton}"
+                             Style="{StaticResource RadioButtonTheme}"
                              IsChecked="True"
                              Command="{Binding HomePageButton}"/>
 
                 <RadioButton Content="Detail Information"
                              Height="50"
-                             Style="{StaticResource RadioButton}"
+                             Style="{StaticResource RadioButtonTheme}"
                              Command="{Binding DetailPageButton}"/>
 
                 <RadioButton Content="Convert"
                              Height="50"
-                             Style="{StaticResource RadioButton}"
+                             Style="{StaticResource RadioButtonTheme}"
                              Command="{Binding ConvertButton}"/>
+                <RadioButton Content="Options"
+                             Height="50"
+                             Style="{StaticResource RadioButtonTheme}"
+                             Command="{Binding OptionsButton}"/>
             </StackPanel>
 
             <ContentPresenter Content="{Binding CurrentPage}" 
                               Grid.Column="1"
                               Margin="5" 
-                              Grid.RowSpan="2" />
+                              Grid.RowSpan="2" 
+                              Opacity="{Binding BorderOpacity}"/>
         </Grid>
     </Border>
 </Window>

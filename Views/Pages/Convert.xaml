@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MyCryptoApp.Views.Pages" 
-             xmlns:viewmodels="clr-namespace:MyCryptoApp.ViewModels" 
+             xmlns:viewmodels="clr-namespace:MyCryptoApp.ViewModels"
+             xmlns:lcv="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
              Width="800" 
              Height="450"
@@ -13,13 +14,14 @@
     <UserControl.DataContext>
         <viewmodels:ConvertViewModel/>
     </UserControl.DataContext>
+        
 
     <StackPanel>
         <TextBlock Text="Convert"
                    FontSize="28"
                    HorizontalAlignment="Left"
                    Margin="0,0,0,20"
-                   Style="{StaticResource TextblockDark}"/>
+                   Style="{StaticResource Textblock}"/>
         <StackPanel Orientation="Horizontal">
             <Border Width="200"
                     HorizontalAlignment="Left">
@@ -27,7 +29,7 @@
                        FontSize="20"
                        HorizontalAlignment="Left"
                        Margin="0,0,0,20"
-                       Style="{StaticResource TextblockDark}"/>
+                       Style="{StaticResource Textblock}"/>
             </Border>
             <Border Width="200"
                     Margin="20,0,0,0">
@@ -35,7 +37,7 @@
                        FontSize="20"
                        HorizontalAlignment="Left"
                        Margin="0,0,0,20"
-                       Style="{StaticResource TextblockDark}"/>
+                       Style="{StaticResource Textblock}"/>
             </Border>
             <Border Width="200"
                     Margin="20,0,0,0">
@@ -43,7 +45,7 @@
                        FontSize="20"
                        HorizontalAlignment="Left"
                        Margin="0,0,0,20"
-                       Style="{StaticResource TextblockDark}"/>
+                       Style="{StaticResource Textblock}"/>
             </Border>
         </StackPanel>
         <StackPanel Orientation="Horizontal"
@@ -56,7 +58,8 @@
                                        Rect="0,0,80,20"/>
                 </Border.Clip>
                 <TextBox Text="{Binding FirstToken}"
-                         BorderThickness="0"/>
+                         BorderThickness="0"
+                         Name="BaseIdTextBlock"/>
             </Border>
             <Border Width="40"
                     Background="Azure">
@@ -78,7 +81,8 @@
                                        Rect="0,0,80,20"/>
                 </Border.Clip>
                 <TextBox Text="{Binding SecondToken}"
-                         BorderThickness="0"/>
+                         BorderThickness="0"
+                         Name="QuoteIdTextBlock"/>
             </Border>
 
             <Border Width="150"
@@ -89,8 +93,8 @@
                                        RadiusY="10"
                                        Rect="0,0,150,20"/>
                 </Border.Clip>
-                <TextBox Text="{Binding PrintConvertToken}"
-                         BorderThickness="0"/>
+                <TextBlock Text="{Binding PrintConvertToken}"
+                           Background="Transparent"/>
             </Border>
             <Border Width="50"
                     Background="Azure"
@@ -103,8 +107,69 @@
                 <Button Background="Transparent"
                         BorderThickness="0"
                         Command="{Binding ConvertToken}">
-                    <TextBlock Text="Convert"
-                               Style="{StaticResource TextblockDark}"/>
+                    <TextBlock Text="Convert"/>
+                </Button>
+            </Border>
+        </StackPanel>
+        <StackPanel Height="270"
+                    Width="650"
+                    HorizontalAlignment="Left"
+                    Margin="0,10,0,0">
+            <lcv:CartesianChart Height="270" 
+                                Series="{Binding SeriesCollection}"/>
+        </StackPanel>
+        <StackPanel Height="35"
+                    Orientation="Horizontal">
+            <Border Background="Azure"
+                    Width="200"
+                    Height="35"
+                    HorizontalAlignment="Left"
+                    Margin="0,0,50,0"
+                    Opacity="{Binding ErrorOpacityPropertyMVVM}"
+                    Name="BorderOpacityClose">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,200,35"/>
+                </Border.Clip>
+                <TextBlock Text="{Binding ErrorTextMVVM}"
+                           Background="Transparent"
+                           Foreground="Black"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Border>
+            <Border Background="Azure"
+                    Width="200"
+                    Height="35"
+                    HorizontalAlignment="Left"
+                    Margin="0,0,70,0"
+                    Name="BorderErrorOpacity"
+                    Opacity="0">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,200,35"/>
+                </Border.Clip>
+                <TextBlock Name="TextBlockError"
+                           Background="Transparent"
+                           Foreground="Black"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Border>
+            <Border Background="Azure"
+                    Width="130"
+                    Height="35"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,0,0">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,130,35"/>
+                </Border.Clip>
+                <Button Click="Button_Click"
+                        Background="Transparent"
+                        BorderThickness="0">
+                    <TextBlock Text="Generate graph"/>
                 </Button>
             </Border>
         </StackPanel>

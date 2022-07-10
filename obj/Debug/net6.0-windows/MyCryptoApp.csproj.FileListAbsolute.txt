@@ -62,7 +62,8 @@ D:\myProject\Crypto-Info\obj\Debug\net6.0-windows\MyCryptoApp.genruntimeconfig.c
 D:\myProject\Crypto-Info\obj\Debug\net6.0-windows\ref\MyCryptoApp.dll
 D:\myProject\Crypto-Info\obj\Debug\net6.0-windows\Views\Pages\Convert.g.cs
 D:\myProject\Crypto-Info\obj\Debug\net6.0-windows\Views\Pages\Convert.baml
-D:\myProject\Crypto-Info\obj\Debug\net6.0-windows\Themes\MenuButtonTheme.baml
 D:\myProject\Crypto-Info\obj\Debug\net6.0-windows\App.baml
-D:\myProject\Crypto-Info\obj\Debug\net6.0-windows\Themes\Dark.baml
-D:\myProject\Crypto-Info\obj\Debug\net6.0-windows\Themes\Light.baml
+D:\myProject\Crypto-Info\bin\Debug\net6.0-windows\LiveCharts.dll
+D:\myProject\Crypto-Info\bin\Debug\net6.0-windows\LiveCharts.Wpf.dll
+D:\myProject\Crypto-Info\bin\Debug\net6.0-windows\Elasticsearch.Net.dll
+D:\myProject\Crypto-Info\bin\Debug\net6.0-windows\Nest.dll

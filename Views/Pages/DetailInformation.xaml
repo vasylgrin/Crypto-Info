@@ -18,13 +18,13 @@
                    FontSize="28"
                    HorizontalAlignment="Left"
                    Margin="0,0,0,20"
-                   Style="{StaticResource TextblockDark}"/>
+                   Style="{StaticResource Textblock}"/>
         <StackPanel>
-            <TextBlock Text="Enter abreviated(btc,eth and etc)"
+            <TextBlock Text="Enter token for search"
                        FontSize="20"
                        HorizontalAlignment="Left"
                        Margin="0,0,0,20"
-                       Style="{StaticResource TextblockDark}"/>
+                       Style="{StaticResource Textblock}"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal">
@@ -74,9 +74,7 @@
                 </Border.Clip>
                 <Grid>
                     <TextBlock Background="Azure"
-                               Text="{Binding GetSearchToken}"
-                               VerticalAlignment="Stretch" Uid=""
-                               />
+                               Text="{Binding GetSearchToken}"/>
                 </Grid>
             </Border>
                     
@@ -85,13 +83,13 @@
         <StackPanel Height="40"/>
         <StackPanel Orientation="Horizontal"
                     Height="229">
-            <Border Width="700"
+            <Border Width="600"
                     Height="229"
                     Background="Azure">
                 <Border.Clip>
                     <RectangleGeometry RadiusX="10"
                                        RadiusY="10"
-                                       Rect="0,0,700,229"/>
+                                       Rect="0,0,600,229"/>
                 </Border.Clip>
 
                 <ListBox Grid.Row="1" 
