@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\myProject\Crypto-Info\App.xaml
-5480692102
+51236851929
 
-22-1108124510
+23-185621787
 199-388167107
-Views\Pages\Convert.xaml;Views\Pages\DetailInformation.xaml;Views\Pages\Home.xaml;Views\Pages\Options.xaml;Views\Windows\MainWindow.xaml;
+MVVM\Views\UserControll\Convert.xaml;MVVM\Views\UserControll\DetailInformation.xaml;MVVM\Views\UserControll\Home.xaml;MVVM\Views\UserControll\Options.xaml;MVVM\Views\Windows\MainWindow.xaml;
 
-False
+True
 

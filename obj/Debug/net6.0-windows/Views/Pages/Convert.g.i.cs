@@ -95,7 +95,7 @@ namespace MyCryptoApp.Views.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MyCryptoApp;component/views/pages/convert.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MyCryptoApp;V1.0.0.0;component/views/pages/convert.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Pages\Convert.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -7,33 +7,33 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\Pages\Convert.xaml.cs">
+    <Compile Update="MVVM\Views\UserControll\Convert.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Pages\DetailInformation.xaml.cs">
+    <Compile Update="MVVM\Views\UserControll\DetailInformation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Pages\Home.xaml.cs">
+    <Compile Update="MVVM\Views\UserControll\Home.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Pages\Options.xaml.cs">
+    <Compile Update="MVVM\Views\UserControll\Options.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\Pages\Convert.xaml">
+    <Page Update="MVVM\Views\UserControll\Convert.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Pages\DetailInformation.xaml">
+    <Page Update="MVVM\Views\UserControll\DetailInformation.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Pages\Home.xaml">
+    <Page Update="MVVM\Views\UserControll\Home.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Pages\Options.xaml">
+    <Page Update="MVVM\Views\UserControll\Options.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Windows\MainWindow.xaml">
+    <Page Update="MVVM\Views\Windows\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
